@@ -442,6 +442,8 @@ install_file() {
       else
         if test "x$ubuntu_codename" != "x"; then
           apt-get install -y "puppet-agent=${puppet_agent_version}-1${ubuntu_codename}"
+        elif test "x$deb_codename" != "x"; then
+          apt-get install -y "puppet-agent=${puppet_agent_version}-1${deb_codename}"
         else
           apt-get install -y "puppet-agent=${puppet_agent_version}"
         fi
